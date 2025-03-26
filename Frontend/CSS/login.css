@@ -1,0 +1,278 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1d3a, #2a2e5c);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+.login-logo {
+  width: 30rem;
+  height: auto;
+  transition: all 0.3s ease;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+
+
+
+.login-container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a1d3a, #2a2e5c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+
+
+
+.login-card {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.08));
+  padding: 3rem;
+  border-radius: 2rem;
+  width: 40rem;
+  text-align: center;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.logo h1 {
+  font-size: 3rem;
+  color: /*#EAB308*/#ccc;
+  margin-bottom: 2rem;
+  letter-spacing: 0.2rem;
+}
+
+.desc {
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-size: 1.4rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #EAB308;
+  color: #1a1d3a;
+  font-size: 1.6rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: #c49d07;
+}
+
+.signup {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.signup a {
+  color: #EAB308;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 1200px+ */
+@media (min-width: 1200px) {
+  .login-card {
+    max-width: 35rem;
+    padding: 3.5rem;
+  }
+
+  
+}
+
+/* 900–1199px */
+@media (max-width: 1199px) {
+  .login-card {
+    max-width: 36rem;
+    padding: 3rem;
+  }
+
+  
+}
+
+@media (max-width: 1000px) {
+  body {
+    flex-direction: column;
+  }
+
+  .login-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-logo {
+    width: 22rem;
+    margin-bottom: 2rem;
+  }
+
+  .login-card {
+    width: 90%;
+    max-width: 34rem;
+    padding: 2.5rem;
+    border-radius: 1.8rem;
+  }
+
+  .logo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .desc {
+    font-size: 1.2rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+
+  .signup {
+    font-size: 1rem;
+  }
+}
+
+/* 700–899px */
+@media (max-width: 899px) {
+  .login-logo {
+    width: 20rem;
+    margin-bottom: 2rem;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-card {
+    width: 90%;
+    padding: 2rem;
+  }
+
+
+  .logo h1 {
+    font-size: 2.4rem;
+  }
+}
+
+/* 600–699px */
+@media (max-width: 699px) {
+  
+
+  .login-card {
+    max-width: 30rem;
+    padding: 2rem;
+  }
+
+  .logo h1 {
+    font-size: 2.2rem;
+  }
+
+  .desc {
+    font-size: 1.2rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+/* 400–599px */
+@media (max-width: 599px) {
+  
+
+  .login-card {
+    max-width: 28rem;
+    padding: 1.8rem;
+    border-radius: 1.5rem;
+  }
+
+  .desc {
+    font-size: 1.1rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 1.1rem;
+    padding: 0.9rem;
+  }
+
+  .signup {
+    font-size: 0.95rem;
+  }
+}
+
+/* <400px */
+@media (max-width: 399px) {
+  
+
+  body > img {
+    width: 12rem;
+    margin-bottom: 1rem;
+  }
+
+  .login-card {
+    max-width: 26rem;
+    padding: 1.5rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .signup {
+    font-size: 0.9rem;
+  }
+}

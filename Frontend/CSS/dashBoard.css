@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&display=swap');
+
+html{
+    font-size: 62.5%;
+    font-family: "Mulish", sans-serif;
+    
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    
+    background-color:#303453 ;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-left{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: -1rem 1rem 3rem #111;
+}
+
+.navbar-left img{
+    width: 20rem;
+    height: 20rem;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+.navbar-left i{
+    font-size: 6rem;
+    color: #fff;
+    margin-bottom: 5rem;
+}
+
+.navbar-left a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10rem;
+    transition: color 0.3s;
+}
+
+.navbar-left a:hover{
+  color: #EAB308;
+}
+
+.blog-show{
+    margin-top: 1rem;
+    margin-left: 25%;
+    width: calc(100% - 25%);
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+    
+}
+
+.blog-card{
+    width: 30rem;
+    /*height: 40rem;*/
+    border-radius: 2rem;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,0.44);;
+    padding: 2rem;
+    margin: 0.1rem;
+    
+}
+
+.img-test{
+    width: 100%;
+    height: 20rem;
+    background-color: #aaa;
+    border-radius: 1rem;
+}
+
+.blog-card h1{
+    color: #fff;
+    letter-spacing: .1rem;
+}
+.blog-card p{
+    color: #fff;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    margin-bottom: 0;
+    
+}
+
+.fa-pen-to-square{
+    color: lightblue;
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.fa-trash{
+    color: rgb(209, 65, 65);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-name-time{
+    display: inline-flex;
+    align-items: center;            
+    justify-content: center;
+    height: 2.7rem;
+    background-color: #EAB308;
+    border-radius: 1rem;
+    padding-top: .4rem;
+    white-space: nowrap;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-name-time h1{
+    margin: 0;  
+    text-align: center;
+    color: #fff;
+    font-size: 100%;
+    font-weight: 800;
+}
+
+.time{
+    background-color: #6eE7b7;
+}
+
+.edit{
+  display: flex;
+  
+}
+
+.blog-card-interactive{
+  display: flex;
+  
+  justify-content: flex-start;
+  align-items: center;
+ 
+  font-size: 2rem;
+  gap:2rem;
+  color: #fff;
+}
+.like{
+  display: flex;
+  gap:0.5rem;
+  align-items: center;
+}
+
+.dislike{
+  display: flex;
+  gap:0.8rem;
+  align-items: center;
+}
+.comment{
+  display: flex;
+  gap:0.5rem;
+  align-items: center;
+}
+
+@media (max-width: 600px) {
+    html {
+      font-size: 55%; /* slightly smaller base */
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    .navbar-left {
+      position: static;
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 1rem;
+      box-shadow: none;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  
+    .navbar-left img {
+      width: 8rem;
+      height: 8rem;
+    }
+  
+    .navbar-left i {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  
+    .navbar-left a {
+      font-size: 1.4rem;
+      margin: 0 1rem;
+    }
+  
+    .blog-show {
+      margin-left: 0;
+      width: 100%;
+      padding: 1rem;
+      justify-content: center;
+    }
+  
+    .blog-card {
+      width: 90%;
+      margin: 1rem 0;
+    }
+  
+    .user-name-time {
+      padding: 0.5rem 1rem;
+      font-size: 1.2rem;
+    }
+  
+    .user-name-time h1 {
+      font-size: 90%;
+    }
+  
+    .info {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
+  
