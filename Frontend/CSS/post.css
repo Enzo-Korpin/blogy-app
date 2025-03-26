@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+    color: #fff;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #303453;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+header {
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.44);
+}
+
+.logo {
+    width: 15rem;
+    height: 15rem;
+    margin-top: -2rem;
+
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav-bar {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.nav-bar a {
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: #eab308;
+}
+
+.nav-bar i {
+    font-size: 3rem;
+}
+
+.section-1 {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.blog-of-the-week-heading {
+    text-align: center;
+    font-size: 5rem;
+    letter-spacing: 0.1rem;
+    margin: 9rem 0rem;
+    text-shadow: 2rem 2rem 6rem rgba(0, 0, 0, 0.44);
+}
+
+.blog-of-the-week-heading span {
+    text-shadow: -2rem 2rem 6rem rgba(0, 0, 0, 0.44);
+}
+
+.blog-of-the-week {
+    width: 70%;
+    /* height: 90%; */
+    border-radius: 2rem;
+    margin: 9rem auto 2rem auto;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.44);
+    padding: 2rem;
+    margin-top: 9rem;
+
+}
+
+.blog-of-the-week-blog {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.blog-of-the-week-image {
+    align-self: center;
+    width: 90%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.blog-of-the-week-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-of-the-week-title {
+    font-size: 3.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+}
+
+.wrap-user-name-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-of-the-week-user-name {
+    font-size: 2rem;
+    color: #eab308;
+    margin: 1rem 0rem;
+}
+
+.blog-of-the-week-date {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: #ccc;
+}
+
+.blog-of-the-week-text {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+}
+
+.section-2 {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+
+}
+
+.search-heading {
+    text-align: center;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+}
+
+.search-input {
+    width: 70rem;
+    height: 3.5rem;
+    position: relative;
+    text-align: center;
+}
+
+.search-input input {
+    width: 90%;
+    height: 100%;
+    padding: 0.3rem;
+    padding-left: 4rem;
+    border-radius: 3rem;
+    border: none;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #333;
+}
+
+.search-input i {
+    position: absolute;
+    transform: scale(1.5);
+    color: #61defb;
+    top: 30%;
+    left: 7%;
+}
+
+
+.section-3 {
+    width: 99%;
+    min-height: 100vh;
+    position: relative;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.44);
+    padding-bottom: 3rem;
+
+}
+
+.blog-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 20rem;
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.blog-card {
+    width: 50rem;
+    min-height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.2rem rgba(0, 0, 0, 0.44), -0.3rem -0.3rem 0.2rem rgba(0, 0, 0, 0.44);
+    padding: 1rem;
+    margin-top: 5rem;
+}
+
+.blog-card-image {
+    align-self: center;
+    width: 90%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-card-title {
+    font-size: 3.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    margin: 1rem 0rem;
+}
+
+.blog-card-user-name {
+    font-size: 2rem;
+    color: #eab308;
+    margin: 1rem 0rem;
+}
+
+.blog-card-date {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: #ccc;
+}
+
+.blog-card-text {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+}
+
+.blog-card-interactive {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 3rem 0rem 1rem 1rem;
+    font-size: 2.5rem;
+    gap: 5rem;
+}
+
+.like {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.dislike {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.comment {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+@media (max-width: 1250px){
+    .nav-bar{
+        width:40%;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .nav-bar {
+        width: 40%;
+        font-size: 1.8rem;
+    }
+
+    .blog-of-the-week {
+        width: 85%;
+    }
+
+    .blog-card {
+        width: 42rem;
+    }
+
+    .search-input {
+        width: 60rem;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    .nav-bar {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .logo {
+        margin-top: 0;
+        height: 15rem;
+    }
+
+    .blog-of-the-week-heading {
+        font-size: 3.5rem;
+        margin: 5rem 0;
+    }
+
+    .blog-of-the-week {
+        width: 95%;
+    }
+
+    .search-input {
+        width: 90%;
+    }
+
+    .blog-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 431px) {
+    html {
+        font-size: 55%;
+    }
+
+    .nav-bar {
+        font-size: 1.6rem;
+    }
+
+    .blog-of-the-week-heading {
+        font-size: 2.8rem;
+    }
+
+    .search-heading {
+        font-size: 2.2rem;
+    }
+
+    .search-input i {
+        top: 27%;
+        left: 8%;
+    }
+
+    .search-input input {
+        padding-left: 3.5rem;
+        font-size: 1.6rem;
+    }
+
+    .blog-card-title,
+    .blog-of-the-week-title {
+        font-size: 2.5rem;
+    }
+
+    .blog-card-user-name,
+    .blog-of-the-week-user-name {
+        font-size: 1.6rem;
+    }
+
+    .blog-card-text,
+    .blog-of-the-week-text {
+        font-size: 1.3rem;
+    }
+
+    .blog-card-interactive {
+        font-size: 2rem;
+        gap: 3rem;
+    }
+}
