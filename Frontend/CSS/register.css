@@ -90,6 +90,17 @@ body {
   background-color: #c49d07;
 }
 
+.signin {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.signin a {
+  color: #EAB308;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* 1200px+ */
 @media (min-width: 1200px) {

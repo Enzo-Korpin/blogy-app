@@ -290,6 +290,7 @@ header {
     gap: 0.5rem;
     align-items: center;
 }
+
 @media (max-width: 1250px){
     .nav-bar{
         width:40%;
