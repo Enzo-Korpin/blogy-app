@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1a1d3a, #2a2e5c);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.about-logo {
+  width: 30rem;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.about-card {
+  background: linear-gradient(to bottom right, rgba(255,255,255,0.06), rgba(255,255,255,0.08));
+  padding: 3rem;
+  max-width: 60rem;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  text-align: center;
+}
+
+.about-card h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #EAB308;
+  letter-spacing: 0.15rem;
+}
+
+.tagline {
+  font-size: 1.4rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.desc {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .about-logo {
+    width: 20rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-card {
+    padding: 2rem;
+    max-width: 90%;
+  }
+
+  .about-card h1 {
+    font-size: 2.4rem;
+  }
+
+  .desc {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .about-logo {
+    width: 14rem;
+  }
+
+  .about-card h1 {
+    font-size: 2rem;
+  }
+
+  .desc {
+    font-size: 1.05rem;
+  }
+}
