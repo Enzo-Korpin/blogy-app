@@ -18,7 +18,7 @@ body {
 
 .login-logo {
   width: 30rem;
-  height: auto;
+  /*height: auto;*/
   transition: all 0.3s ease;
   object-fit: contain;
   margin-bottom: 2rem;
@@ -31,7 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  margin: 2rem;
 }
 
 .login-card {
@@ -42,6 +42,7 @@ body {
   text-align: center;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
+  transform: scale(0.8);
 }
 
 .logo h1 {
@@ -132,6 +133,7 @@ body {
 
   .login-logo {
     width: 22rem;
+    margin-top: 20rem;
     margin-bottom: 2rem;
   }
 
