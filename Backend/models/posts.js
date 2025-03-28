@@ -1,0 +1,39 @@
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://127.0.0.1:27017/blogy");
+
+const postSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true,
+  },
+
+  description: {
+    type: String,
+    required: true,
+  },
+
+  like: {
+    type: Number,
+    default: 0
+  },
+
+  dislike: {
+    type: Number,
+    default: 0
+  },
+
+
+
+
+  userID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true
+  },
+},
+
+  { timestamps: true });
+
+const Post = mongoose.model("Post", postSchema);
+module.exports = Post;
+

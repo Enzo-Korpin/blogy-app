@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <img src="../../Images/blogy-logo-lightgray_1.png" alt="Logo of blogy" class="login-logo">
+  <img src="/Images/blogy-logo-lightgray_1.png" alt="Logo of blogy" class="login-logo">
   <div class="login-container">
     <div class="login-card">
       <div class="logo">
@@ -21,11 +21,11 @@
 
       <p class="desc">Please create new account</p>
 
-      <form class="login-form">
-        <input type="text" placeholder="Full name" required />
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
-        <input type="password" placeholder="Confirm Password" required />
+      <form class="register-form" id="registerform" method="post" action="#">
+        <input type="text" placeholder="Full name" name="fullName" id="fullName" required />
+        <input type="text" placeholder="Username" name="userName" id="userName"  required />
+        <input type="password" placeholder="Password" name="password" id="password"  required />
+        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword"  required />
         <button type="submit">Sign up</button>
         <!--<p class="signup">Don’t have an account? <a href="#">Sign up</a></p>
           -->
@@ -33,6 +33,10 @@
       <p class="signin">Already have an account? <a href="./login.html">Sign in</a></p>
     </div>
   </div>
+  <script src="../JS/registerfetch.js"></script>
+
 </body>
 
 </html>
+
+<!--this is register.html-->
