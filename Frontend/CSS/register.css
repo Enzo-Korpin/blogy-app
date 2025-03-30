@@ -16,7 +16,7 @@ body {
   justify-content: center;
 }
 
-.login-logo {
+.register-logo {
   width: 30rem;
   /*height: auto;*/
   transition: all 0.3s ease;
@@ -24,7 +24,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.login-container {
+.register-container {
   width: 100%;
   height: 100vh;
   background: linear-gradient(135deg, #1a1d3a, #2a2e5c);
@@ -34,7 +34,7 @@ body {
   margin: 2rem;
 }
 
-.login-card {
+.register-card {
   background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.08));
   padding: 3rem;
   border-radius: 2rem;
@@ -103,9 +103,24 @@ body {
   font-weight: bold;
 }
 
+#cardError{
+  max-width: 30rem;
+  padding: 2rem;
+  border-radius: 1.8rem;
+  background-color: rgb(92, 24, 24);
+  transform: scale(0);
+  color: #fff;
+  font-size: 1.1rem;
+  margin:1rem
+}
+
+#cardError li{
+  margin: 0.5rem;
+}
+
 /* 1200px+ */
 @media (min-width: 1200px) {
-  .login-card {
+  .register-card {
     max-width: 35rem;
     padding: 3.5rem;
   }
@@ -113,7 +128,7 @@ body {
 
 /* 900–1199px */
 @media (max-width: 1199px) {
-  .login-card {
+  .register-card {
     max-width: 36rem;
     padding: 3rem;
   }
@@ -125,19 +140,19 @@ body {
     flex-direction: column;
   }
 
-  .login-container {
+  .register-container {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
 
-  .login-logo {
+  .register-logo {
     width: 22rem;
     margin-top: 20rem;
     margin-bottom: 2rem;
   }
 
-  .login-card {
+  .register-card {
     width: 90%;
     max-width: 34rem;
     padding: 2.5rem;
@@ -153,8 +168,8 @@ body {
     font-size: 1.2rem;
   }
 
-  .login-form input,
-  .login-form button {
+  .register-form input,
+  .register-form button {
     font-size: 1.2rem;
     padding: 1rem;
   }
@@ -162,12 +177,12 @@ body {
 
 /* 700–899px */
 @media (max-width: 899px) {
-  .login-logo {
+  .register-logo {
     width: 20rem;
     margin-bottom: 2rem;
   }
 
-  .login-card {
+  .register-card {
     width: 90%;
     padding: 2rem;
   }
@@ -179,7 +194,7 @@ body {
 
 /* 600–699px */
 @media (max-width: 699px) {
-  .login-card {
+  .register-card {
     max-width: 30rem;
     padding: 2rem;
   }
@@ -192,16 +207,20 @@ body {
     font-size: 1.2rem;
   }
 
-  .login-form input,
-  .login-form button {
+  .register-form input,
+  .register-form button {
     font-size: 1.2rem;
     padding: 1rem;
+  }
+
+  #cardError{
+    margin: 1rem;
   }
 }
 
 /* 400–599px */
 @media (max-width: 599px) {
-  .login-card {
+  .register-card {
     max-width: 28rem;
     padding: 1.8rem;
     border-radius: 1.5rem;
@@ -211,8 +230,8 @@ body {
     font-size: 1.1rem;
   }
 
-  .login-form input,
-  .login-form button {
+  .register-form input,
+  .register-form button {
     font-size: 1.1rem;
     padding: 0.9rem;
   }
@@ -220,12 +239,12 @@ body {
 
 /* <400px */
 @media (max-width: 399px) {
-  .login-logo {
+  .register-logo {
     width: 12rem;
     margin-bottom: 1rem;
   }
 
-  .login-card {
+  .register-card {
     max-width: 26rem;
     padding: 1.5rem;
   }
@@ -234,8 +253,8 @@ body {
     font-size: 1rem;
   }
 
-  .login-form input,
-  .login-form button {
+  .register-form input,
+  .register-form button {
     font-size: 1rem;
     padding: 0.8rem;
   }

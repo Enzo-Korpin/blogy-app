@@ -10,7 +10,13 @@ router.post("/register", registerValidator.registerValidator, usersController.ha
 
 router.post("/login", loginValidator.loginValidator, usersController.handleLogin)
 
-router.post("/logout", usersController.handleLogout)
+router.get("/logout", usersController.handleLogout)
+
+router.get("/post", usersController.handlePostPage)
+
+router.get("/login", usersController.handleLoginRender)
+
+router.get("/register", usersController.handleRegisterRender)
 
 module.exports = router;
 
