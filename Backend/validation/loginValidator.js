@@ -8,7 +8,7 @@ const loginValidator = [
         .custom(async (value) => {
             const user = await Users.findOne({ userName: value })
             if (!user) {
-                throw new Error("User is not found")
+                throw new Error("Invalid user name or password")
             }
             return true;
         }),

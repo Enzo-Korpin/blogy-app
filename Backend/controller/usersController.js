@@ -1,5 +1,6 @@
 const Users = require("../models/users.js");
 const bcrypt = require("bcrypt");
+const path = require("path");
 const { validationResult } = require('express-validator');
 
 
@@ -55,14 +56,27 @@ const handleLogout = async (req, res) => {
     req.session.destroy(err => {
         if (err) return res.status(500).json({ error: "Logout failed" });
 
-        res.clearCookie("connect.sid"); // Optional
-        res.status(200).json({ message: "Logged out successfully" });
+        res.clearCookie("connect.sid");
+        return res.redirect("/users/login?expired=true");
     });
 };
 
+const handlePostPage = async (req, res) =>{
+    res.sendFile(path.join(__dirname, "../../Frontend/HTML/post.html"));
+}
+
+const handleLoginRender = async (req, res) =>{
+    res.sendFile(path.join(__dirname, "../../Frontend/HTML/login.html"));
+}
+const handleRegisterRender = async (req, res) =>{
+    res.sendFile(path.join(__dirname, "../../Frontend/HTML/register.html"));
+}
 
 module.exports = {
     handleRegister,
     handleLogin,
-    handleLogout
+    handleLogout,
+    handlePostPage,
+    handleLoginRender,
+    handleRegisterRender
 }
