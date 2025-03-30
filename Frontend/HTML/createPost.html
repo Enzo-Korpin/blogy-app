@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/createPost.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    
+      
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/Images/blogy-logo-2.png" alt="blogy-logo">
+        </div>
+        <nav class="nav-bar">
+            <a href="/users/post">Home</a>
+            <a href="/users/dashBoard">Dashboard </a>
+            <a href="/users/about">About Us</a>
+            <a href="/users/contact">Contact</a>
+            <i class="fa-solid fa-circle-user"></i>
+        </nav>
+    </header>
+
+    <section class="section-1">
+        <div class="section-heading">
+            <h1>Create Post</h1>
+        </div>
+
+        <div class="create">
+            <div class="import-img">
+                <input type="file" id="imageInput" name="imageInput" accept="image/*" hidden>
+                <label for="imageInput" class="dropzone" id="dropzone">
+                    <img src="https://img.icons8.com/ios/100/image--v1.png" alt="upload-icon" />
+                    <p>Drop your image here or <span class="browse">browse</span></p>
+                </label>
+            </div>
+            
+            <div class="write-post">
+                <form action="">
+                    <div class="title">
+                        <label for="title">Title</label>
+                        <br>
+                        <input type="text" id="title" name="title" placeholder="Enter your title here...">
+                    </div>
+                    <div class="content">
+                        <label for="content">Content</label>
+                        <br>
+                        <textarea id="content" name="content" rows="10" cols="30" placeholder="Write your content here..."></textarea>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit">Create Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="/Frontend/JS/imagedragdrop.js" ></script>     
+</body>
+</html>
