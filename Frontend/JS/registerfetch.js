@@ -12,15 +12,15 @@ document.getElementById("registerform").addEventListener("submit", async (event)
         "Content-Type": "application/json",
       },
       credentials: "include",
-      body: JSON.stringify({ fullName, userName, password, confirmPassword }) // No isAdmin
+      body: JSON.stringify({ fullName, userName, password, confirmPassword }) 
     });
   
     const data = await res.json();
     if (res.ok) {
       alert("Registered successfully ✅");
-      window.location.href = "./login.html";
+      window.location.href = "/HTML/login.html";
     } else {
-      alert(data.error || data.message || (data.messages?.join(", ")) || "Registration failed");
+      alert(data.message || "Registration failed");
     }
   });
   

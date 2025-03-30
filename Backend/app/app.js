@@ -29,7 +29,7 @@ app.use("/users", usersRoute);
 
 
 app.listen(port, () => {
-  console.log("app is running")
+  console.log("app is running `http://localhost:8080`");
 });
 
 //this is app.js

@@ -20,7 +20,7 @@ document.getElementById("loginform").addEventListener("submit", async (event) =>
     
     const data = await res.json();
     if (res.ok) {
-        window.location.href = "../HTML/post.html";
+        window.location.href = "/HTML/post.html";
     } else {
         alert(data.error); // Show error message
     }
