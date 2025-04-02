@@ -26,10 +26,13 @@ const userSchema = new mongoose.Schema({
         default: false,
     },
     
+<<<<<<< HEAD
     pathAvatar: {
         type: String,
         default: "../../Images/avatars/default.png"
     },
+=======
+>>>>>>> d349323e6ed8007d6177e2985b1a4b8d88259499
 
 
 },

@@ -22,7 +22,15 @@ const postSchema = new mongoose.Schema({
     default: 0
   },
 
+  commentCount: {
+    type: Number,
+    default: 0
+  },
 
+
+  image: {
+    type: String
+  },
 
 
   userID: {
@@ -30,6 +38,11 @@ const postSchema = new mongoose.Schema({
     ref: "User",
     required: true
   },
+
+  userName: {
+    type: String,
+    required: true
+  }
 },
 
   { timestamps: true });
