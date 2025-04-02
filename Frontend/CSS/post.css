@@ -373,9 +373,8 @@ header {
     }
 }
 
-<<<<<<< HEAD
-@media (max-width: 930px) {
-=======
+
+
 @media (max-width: 1000px) {
     .nav-bar {
         width: 50%;
@@ -431,7 +430,6 @@ header {
 }
 
 @media (max-width: 800px) {
->>>>>>> d349323e6ed8007d6177e2985b1a4b8d88259499
     header {
         flex-direction: column;
         align-items: center;

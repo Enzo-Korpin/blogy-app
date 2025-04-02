@@ -28,15 +28,13 @@ document.addEventListener("click", async (e) => {
         const newTitle = titleInput.value;
         const newDesc = descInput.value;
         const postId = card.dataset.id;
-        console.log(postId)
         const res = await fetch(`/posts/posts/${postId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ title: newTitle, description: newDesc }),
+          body: JSON.stringify({ title: newTitle || " " , description: newDesc || " " }),
         });
-  
         const data = await res.json();
         
         if (res.ok && data.post) {

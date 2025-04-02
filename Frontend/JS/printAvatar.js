@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", async () => {
     try {
+        console.log("Fetching user avatar...");
         const res = await fetch("/users/avatar", {
             method: "GET",
             credentials: "include"

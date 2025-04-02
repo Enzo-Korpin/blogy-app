@@ -85,11 +85,6 @@ const handleAvatarRender = async (req, res) => {
     res.json({pathAvatar:  pathAvatar})
 }
 
-const handleDashBoardRender = async (req, res) =>{
-    res.sendFile(path.join(__dirname, "../../Frontend/HTML/dashBoard.html"));
-}
-
-
 
 
 
@@ -100,11 +95,6 @@ module.exports = {
     handlePostPage,
     handleLoginRender,
     handleRegisterRender,
-<<<<<<< HEAD
     handleDashBoardRender,
     handleAvatarRender
-=======
-    handleDashBoardRender
-    
->>>>>>> d349323e6ed8007d6177e2985b1a4b8d88259499
 }
