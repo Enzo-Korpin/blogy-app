@@ -2,18 +2,15 @@ document.getElementById("registerform").addEventListener("submit", async (event)
   event.preventDefault();
 
   const card = document.getElementById("cardError");
-  const fullName = document.getElementById("fullName").value.trim();
-  const userName = document.getElementById("userName").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const confirmPassword = document.getElementById("confirmPassword").value.trim();
+  const form = document.getElementById("registerform");
+
+  const formData = new FormData(form);
 
   const res = await fetch("/users/register", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    body: formData,
     credentials: "include",
-    body: JSON.stringify({ fullName, userName, password, confirmPassword }) // No isAdmin
+
   });
 
   const data = await res.json();
@@ -39,12 +36,8 @@ document.getElementById("registerform").addEventListener("submit", async (event)
   }
 
 
-
-
-
-  
-
 });
 
+// this is updateAVatar to update the avatar image in the register page
 
 //this is register.js

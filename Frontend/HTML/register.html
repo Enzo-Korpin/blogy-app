@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="../CSS/register.css">
+  <link rel="stylesheet" href="/CSS/register.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -24,19 +24,22 @@
 
       <p class="desc">Please create new account</p>
 
-      <form class="register-form" id="registerform" method="post" action="#">
+      <form class="register-form" id="registerform" method="post">
         <input type="text" placeholder="Full name" name="fullName" id="fullName" required />
         <input type="text" placeholder="Username" name="userName" id="userName"  required />
         <input type="password" placeholder="Password" name="password" id="password"  required />
         <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword"  required />
+        <label class="avatar-upload">
+          <input type="file" id="avatar-upload" name="avatar" accept="image/*"/>
+          <img src="/Images/avatars/default.jpg" alt="avatar image" id="avatar-upload-img">
+        </label>
         <button type="submit">Sign up</button>
-        <!--<p class="signup">Don’t have an account? <a href="#">Sign up</a></p>
-          -->
       </form>
       <p class="signin">Already have an account? <a href="/users/login">Sign in</a></p>
     </div>
   </div>
   <script src="/JS/registerfetch.js"></script>
+  <script src="/JS/registerAvatar.js"></script>
 
 </body>
 
