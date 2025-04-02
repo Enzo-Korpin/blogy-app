@@ -91,16 +91,52 @@ body{
     border-radius: 1rem;
 }
 
-.blog-card h1{
+.blog-card input,
+.blog-card textarea {
+  width: 90%;
+  padding: 1rem;
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  border: 2px solid #ddd;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.blog-card textarea {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+.blog-card button {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.blog-title{
     color: #fff;
     letter-spacing: .1rem;
 }
-.blog-card p{
+.blog-disc{
     color: #fff;
     font-size: 1.5rem;
     letter-spacing: .1rem;
     margin-bottom: 0;
-    
+}
+
+.blog-title,
+.blog-disc {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .fa-pen-to-square{
@@ -224,6 +260,10 @@ body{
       width: 90%;
       margin: 1rem 0;
     }
+
+    .img-test {
+      height: 35rem;
+    }
   
     .user-name-time {
       padding: 0.5rem 1rem;
@@ -237,6 +277,34 @@ body{
     .info {
       flex-direction: column;
       gap: 1rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    html {
+      font-size: 50%; /* even smaller base */
+    }
+  
+    .navbar-left a {
+      font-size: 1.2rem;
+    }
+  
+    .blog-card {
+      width: 100%;
+      padding: 1rem;
+    }
+  
+    .img-test {
+      height: 35rem;
+    }
+  
+    .user-name-time {
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+  
+    .user-name-time h1 {
+      font-size: 80%;
     }
   }
   

@@ -2,6 +2,7 @@ const Users = require("../models/users.js");
 const bcrypt = require("bcrypt");
 const path = require("path");
 const { validationResult } = require('express-validator');
+const Posts = require("../models/posts.js");
 
 
 const handleRegister = async (req, res) => {
@@ -72,11 +73,21 @@ const handleRegisterRender = async (req, res) =>{
     res.sendFile(path.join(__dirname, "../../Frontend/HTML/register.html"));
 }
 
+const handleDashBoardRender = async (req, res) =>{
+    res.sendFile(path.join(__dirname, "../../Frontend/HTML/dashBoard.html"));
+}
+
+
+
+
+
 module.exports = {
     handleRegister,
     handleLogin,
     handleLogout,
     handlePostPage,
     handleLoginRender,
-    handleRegisterRender
+    handleRegisterRender,
+    handleDashBoardRender
+    
 }
