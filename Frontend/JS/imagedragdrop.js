@@ -25,7 +25,6 @@ dropzone.addEventListener("drop", (e) => {
 });
 
 form.addEventListener("submit", async(e) => {
-  console.log("im in submit")
   e.preventDefault(); // Prevent form submission for demonstration purposes
  
   const title = document.getElementById("title").value;
@@ -46,12 +45,11 @@ form.addEventListener("submit", async(e) => {
 
 const res = await fetch("/posts/create", {
   
-
+  
   method: "POST",
   credentials: "include",
   body: formData,
 });
-console.log("im in fetch")
 const data = await res.json();
 if (res.ok) {
   alert("Post created successfully!");

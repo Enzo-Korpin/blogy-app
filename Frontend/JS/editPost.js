@@ -33,7 +33,7 @@ document.addEventListener("click", async (e) => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ title: newTitle || " " , description: newDesc || " " }),
+          body: JSON.stringify({ title: newTitle , description: newDesc }),
         });
         const data = await res.json();
         

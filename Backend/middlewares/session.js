@@ -10,7 +10,7 @@ const sessionMiddleware = session({
     collectionName: "sessions"
   }),
   cookie: {
-    maxAge: 1000 * 60 * 1  , 
+    maxAge: 1000 * 60 * 1 * 0.4   , 
 
     httpOnly: true,
     secure: false 

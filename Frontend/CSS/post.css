@@ -73,6 +73,29 @@ header {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    transition: all 0.3s;
+}
+
+#avatar-img:hover {
+    transform: translateY(-0.5rem);
+}
+
+#logout-btn {
+    border-radius: 5rem;
+    background-color: #800505;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    transform: scale(0);
+    transition: all 0.4s;
+}
+
+#logout-btn.active {
+    transform: scale(1);
+    opacity: 1;
+
 }
 
 .nav-bar a:hover {
@@ -223,28 +246,29 @@ header {
     background-color: #B0B3C5;
     /* background: linear-gradient(135deg, #1e3a8a, #9333ea); */
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.44);
-    padding: 2rem;    
+    padding: 2rem;
 }
 
-.para-create{
+.para-create {
     margin: 0;
     padding: 0;
     font-size: 2.8rem;
     font-weight: 700;
     color: #1f2937;
 }
-.para-create span{
-    color: #facc15; 
+
+.para-create span {
+    color: #facc15;
     font-size: 3rem;
-    font-weight:700;
+    font-weight: 700;
     /* text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.44); */
 }
 
-.create-post a{
+.create-post a {
     /* margin: 2rem 0 0 8rem; */
     padding: 1.5rem 4rem;
     border-radius: 3rem;
-    color: #fff; 
+    color: #fff;
     background-color: #099cbd;
     font-size: 2.5rem;
     font-weight: 700;
@@ -418,13 +442,15 @@ header {
     }
 
 
-    .para-create{
+    .para-create {
         font-size: 2.5rem;
     }
-    .para-create span{
+
+    .para-create span {
         font-size: 2.5rem;
     }
-    .create-post a{
+
+    .create-post a {
         font-size: 2.5rem;
     }
 }
@@ -471,13 +497,15 @@ header {
         width: 90%;
     }
 
-    .para-create{
+    .para-create {
         font-size: 2.2rem;
     }
-    .para-create span{
+
+    .para-create span {
         font-size: 2.2rem;
     }
-    .create-post a{
+
+    .create-post a {
         font-size: 2.2rem;
     }
 }
@@ -524,13 +552,15 @@ header {
         width: 90%;
     }
 
-    .para-create{
+    .para-create {
         font-size: 1.8rem;
     }
-    .para-create span{
+
+    .para-create span {
         font-size: 1.8rem;
     }
-    .create-post a{
+
+    .create-post a {
         font-size: 1.8rem;
     }
 }
@@ -576,17 +606,20 @@ header {
     .blog-card {
         width: 90%;
     }
+
     .blog-card-title {
         font-size: 2.5rem;
     }
 
-    .para-create{
+    .para-create {
         font-size: 1.7rem;
     }
-    .para-create span{
+
+    .para-create span {
         font-size: 1.7rem;
     }
-    .create-post a{
+
+    .create-post a {
         font-size: 1.7rem;
         padding: 1.5rem 2rem;
     }
@@ -634,11 +667,13 @@ header {
     .blog-card {
         width: 90%;
     }
-    .create-post{
+
+    .create-post {
         flex-direction: column;
         height: auto;
     }
-    .create-post a{
+
+    .create-post a {
         margin-top: 1rem;
         font-size: 1.5rem;
         padding: 1.5rem 1rem;

@@ -13,7 +13,7 @@ const port = 8080;
 app.use(express.static(path.join(__dirname, "../../Frontend")));
 
 app.use("/Images", express.static(path.join(__dirname, "../../Images")));
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+
 
 
 

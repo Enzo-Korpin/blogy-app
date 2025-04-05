@@ -1,6 +1,5 @@
 window.addEventListener("DOMContentLoaded", async () => {
     try {
-        console.log("Fetching user avatar...");
         const res = await fetch("/users/avatar", {
             method: "GET",
             credentials: "include"
@@ -15,6 +14,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             avatar.src = user.pathAvatar;
         }
     } catch (err) {
-        console.error("Failed to load user:", err.message);
+        console.error("Failed to load the Avatar:", err.message);
     }
 })

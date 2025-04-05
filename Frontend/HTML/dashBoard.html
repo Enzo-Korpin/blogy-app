@@ -16,7 +16,10 @@
         <aside class="navbar-left">
             <img src="/Images/blogy-logo-lightgray_1.png" alt="Logo of blogy">
             <div id="avatar-container">
-                <img src="../../Images/avatars/default.jpg" alt="" id="avatar-img">
+                <img src="../../Images/avatars/default.png" alt="" id="avatar-img">
+                <form action="/users/logout">
+                    <button type="submit" id="logout-btn">Logout</button>
+                </form>
             </div>
             <a href="/users/post">Home</a>
             <a href="/users/dashBoard">Dashboard</a>
@@ -73,10 +76,11 @@
             </div> -->
         </main>
     </div>
+    <script src="../JS/logout-btn.js"></script>
     <script src="../JS/printAvatar.js"></script>
-    <script src="/JS/showPost.js"></script>
-    <script src="/JS/editPost.js"></script>
-    <script src="/JS/deletePost.js"></script>
+    <script src="../JS/showPost.js"></script>
+    <script src="../JS/editPost.js"></script>
+    <script src="../JS/deletePost.js"></script>
 
 </body>
 

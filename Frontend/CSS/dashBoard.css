@@ -54,6 +54,27 @@ body {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  transition: all 0.3s;
+}
+#avatar-img:hover {
+  transform: translateY(-0.5rem);
+}
+
+#logout-btn {
+  border-radius: 5rem;
+  background-color: #800505;
+  color: #fff;
+  border:none;
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transform: scale(0);
+  transition: all 0.4s;
+}
+#logout-btn.active {
+  transform: scale(1);
+  opacity: 1;
+  
 }
 
 .navbar-left a {

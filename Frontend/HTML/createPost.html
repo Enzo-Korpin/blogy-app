@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/createPost.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    
-      
+
+
+
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -20,7 +22,9 @@
             <a href="/users/dashBoard">Dashboard </a>
             <a href="/users/about">About Us</a>
             <a href="/users/contact">Contact</a>
-            <i class="fa-solid fa-circle-user"></i>
+            <div id="avatar-container">
+                <img src="../../Images/avatars/default.png" alt="" id="avatar-img">
+            </div>
         </nav>
     </header>
 
@@ -37,18 +41,19 @@
                     <p>Drop your image here or <span class="browse">browse</span></p>
                 </label>
             </div>
-            
+
             <div class="write-post">
                 <form method="post">
                     <div class="title">
                         <label for="title">Title</label>
                         <br>
-                        <input type="text" id="title" name="title" placeholder="Enter your title here...">
+                        <input type="text" id="title" name="title" placeholder="Enter your title here..." required>
                     </div>
                     <div class="content">
                         <label for="content">Content</label>
                         <br>
-                        <textarea id="content" name="content" rows="10" cols="30" placeholder="Write your content here..."></textarea>
+                        <textarea id="content" name="content" rows="10" cols="30"
+                            placeholder="Write your content here..." required></textarea>
                     </div>
                     <div class="button-container">
                         <button type="submit">Create Post</button>
@@ -58,8 +63,10 @@
         </div>
     </section>
 
-    <script src="/JS/imagedragdrop.js" ></script>     
+    <script src="../JS/printAvatar.js"></script>
+    <script src="../JS/imagedragdrop.js"></script>
 </body>
+
 </html>
 
 <!--this is createPost.html-->

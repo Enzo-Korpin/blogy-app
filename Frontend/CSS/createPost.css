@@ -36,6 +36,20 @@ header {
     background-color: rgba(0, 0, 0, 0.44);
 }
 
+#avatar-container {
+    width: 6rem;
+    height: 6rem;
+    align-content: center;
+    cursor: pointer;
+}
+
+#avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .logo {
     width: 15rem;
     height: 15rem;
@@ -57,7 +71,7 @@ header {
     justify-content: space-evenly;
     align-items: center;
     font-size: 2rem;
-    
+
 }
 
 .nav-bar a {
@@ -76,10 +90,10 @@ header {
 .section-1 {
     width: 100%;
     height: 100vh;
-    
+
 }
 
-.section-heading h1{
+.section-heading h1 {
     font-size: 4rem;
     text-align: center;
     margin: 3rem 0 5rem 0;
@@ -87,7 +101,7 @@ header {
     font-weight: 700;
 }
 
-.create{
+.create {
     display: flex;
     justify-content: center;
     margin: 0 2rem 0 2rem;
@@ -100,8 +114,8 @@ header {
     height: 30rem;
     margin: 1rem 2rem 0 2rem;
 
-  }
-  
+}
+
 .dropzone {
     width: 30rem;
     height: 100%;
@@ -117,18 +131,18 @@ header {
     align-items: center;
     flex-direction: column;
 }
-  
+
 .dropzone:hover {
     border-color: #60a5fa;
     background-color: #f9fafb;
 }
-  
+
 .dropzone img {
     width: 60px;
     opacity: 0.6;
     margin-bottom: 1rem;
 }
-  
+
 .dropzone p {
     font-family: sans-serif;
     font-size: 1.3rem;
@@ -136,16 +150,16 @@ header {
     font-weight: 700;
 
 }
-  
+
 .browse {
     color: #3b82f6;
     text-decoration: underline;
     cursor: pointer;
     font-weight: 700;
 }
-  
 
-.write-post{
+
+.write-post {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,7 +171,7 @@ header {
     margin: 1rem 0 1rem 0;
 }
 
-.title input{
+.title input {
     width: 50rem;
     height: 3.5rem;
     border-radius: 1rem;
@@ -168,11 +182,12 @@ header {
     color: #000;
     margin: 0.4rem 0 2rem 0;
 }
+
 .content label {
     font-size: 2rem;
 }
 
-.content textarea{
+.content textarea {
     width: 50rem;
     max-width: 50rem;
     min-height: 3.5rem;
@@ -190,7 +205,7 @@ header {
     text-align: right;
     margin-top: 1rem;
 }
-  
+
 .button-container button {
     width: 10rem;
     height: 3.5rem;
@@ -201,7 +216,7 @@ header {
     border-radius: 0.5rem;
     cursor: pointer;
 }
-  
+
 .button-container button:hover {
     background-color: #2563eb;
 }
