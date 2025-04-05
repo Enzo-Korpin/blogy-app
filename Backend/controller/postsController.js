@@ -89,13 +89,25 @@ const handleDeletePost = async(req, res) => {
     res.status(200).json({ message: "Post deleted successfully" });
 }
 
+const showAllPosts = async (req, res) => {
+    try {
+        const posts = await Posts.find().sort({createdAt: -1});
+        res.status(200).json(posts);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: "Server error" });
+    }
+    
+}
+
 module.exports = {
     createPost,
     handleCreatePostRender,
     uplaodImgPost,
     handleUserPosts,
     handleEditPost,
-    handleDeletePost
+    handleDeletePost,
+    showAllPosts
 }
 
 //this is postController.js

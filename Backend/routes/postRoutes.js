@@ -14,6 +14,9 @@ router.put("/posts/:postId", postsController.handleEditPost)
 
 router.delete("/posts/:postId", postsController.handleDeletePost)
 
+router.get("/home", postsController.showAllPosts)
+
+
 module.exports = router;
 
 // //this is postRoutes.js

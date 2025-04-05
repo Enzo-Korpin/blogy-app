@@ -1,5 +1,6 @@
 const usersRoute = require("../routes/usersRoutes.js");
 const postRoute = require("../routes/postRoutes.js");
+const commentRoute = require("../routes/commentRoutes.js")
 const express = require("express");
 const app = express();
 
@@ -25,6 +26,7 @@ app.use(sessionMiddleware);
 app.use(checkSession)
 app.use("/users", usersRoute);
 app.use("/posts", postRoute);
+app.use("/comments", commentRoute);
 
 
 

@@ -1,4 +1,6 @@
 //this for show user's posts
+
+
 document.addEventListener("DOMContentLoaded", async() => {
   const res = await fetch("/posts/posts");
   const posts = await res.json();
@@ -34,9 +36,9 @@ document.addEventListener("DOMContentLoaded", async() => {
             <i class="fa-solid fa-thumbs-down"></i>
             <h3>${post.dislike || 0}</h3>
           </div>
-          <div class="comment">
-            <i class="fa-solid fa-comment"></i>
-            <h3>${post.commentCount || 0}</h3>
+          <div class="comment" onclick="showComments('${post._id}')">
+                <i class="fa-solid fa-comment"></i>
+                <h3>${post.commentCount || 0}</h3>
           </div>
         </div>
 
