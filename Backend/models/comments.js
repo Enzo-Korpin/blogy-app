@@ -14,11 +14,14 @@ const commentSchema = new mongoose.Schema({
     required: true
   },
 
+
+
   postID: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Post",
     required: true
   },
+
 
 
 },
