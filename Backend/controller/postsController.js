@@ -86,9 +86,6 @@ const handleDeletePost = async (req, res) => {
         res.status(500).json({ message: "Server error11111" });
     }
 }
-<<<<<<< HEAD
-    
-=======
 
 const showAllPosts = async (req, res) => {
     try {
@@ -101,7 +98,6 @@ const showAllPosts = async (req, res) => {
     
 }
 
->>>>>>> c9d1397e51a63c093c5469593a70d5c2007b7a4c
 module.exports = {
     createPost,
     handleCreatePostRender,
