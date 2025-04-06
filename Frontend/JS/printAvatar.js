@@ -14,6 +14,6 @@ window.addEventListener("DOMContentLoaded", async () => {
             avatar.src = user.pathAvatar;
         }
     } catch (err) {
-        console.error("Failed to load the Avatar:", err.message);
+        alert("Failed to load the Avatar:",);
     }
 })

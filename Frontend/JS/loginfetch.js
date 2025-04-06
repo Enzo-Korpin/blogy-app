@@ -14,36 +14,36 @@ document.getElementById("loginform").addEventListener("submit", async (event) =>
   const password = document.getElementById("password").value.trim();
 
 
+  try {
 
-  const res = await fetch("/users/login", {
+    const res = await fetch("/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ userName, password }),
+    });
 
+    const data = await res.json();
+    if (res.ok) {
+      window.location.href = "/users/post";
+    } else if (Array.isArray(data.messages)) {
+      let ul = document.createElement("ul")
 
+      data.messages.forEach((e) => {
+        let li = document.createElement("li")
+        li.textContent = e;
+        ul.appendChild(li);
 
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    credentials: "include",
-    body: JSON.stringify({ userName, password }),
-  });
-
-  const data = await res.json();
-  if (res.ok) {
-    window.location.href = "/users/post";
-  } else if (Array.isArray(data.messages)) {
-    let ul = document.createElement("ul")
-
-    data.messages.forEach((e) => {
-      let li = document.createElement("li")
-      li.textContent = e;
-      ul.appendChild(li);
-
-
-
-    })
-    card.style.transform = "scale(1)";
-    card.innerHTML = ""
-    card.appendChild(ul)
+      })
+      card.style.transform = "scale(1)";
+      card.innerHTML = ""
+      card.appendChild(ul)
+    }
+  } catch (err) {
+    console.error("Failed to login:", err);
+    alert("An error occurred while logging in. Please try again.");
   }
 });
 

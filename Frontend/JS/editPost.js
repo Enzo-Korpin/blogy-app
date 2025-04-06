@@ -28,30 +28,35 @@ document.addEventListener("click", async (e) => {
         const newTitle = titleInput.value;
         const newDesc = descInput.value;
         const postId = card.dataset.id;
-        const res = await fetch(`/posts/posts/${postId}`, {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ title: newTitle , description: newDesc }),
-        });
-        const data = await res.json();
-        
-        if (res.ok && data.post) {
-          const newTitleEl = document.createElement("h1");
-          newTitleEl.className = "blog-title";
-          newTitleEl.textContent = data.post.title;
-  
-          const newDescEl = document.createElement("p");
-          newDescEl.className = "blog-disc";
-          newDescEl.textContent = data.post.description;
+        try{
           
-          titleInput.replaceWith(newTitleEl);
-          descInput.replaceWith(newDescEl);
+          const res = await fetch(`/posts/posts/${postId}`, {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ title: newTitle , description: newDesc }),
+          });
+          const data = await res.json();
           
-          saveBTn.remove();
-        } else {
-          alert(data.message);
+          if (res.ok && data.post) {
+            const newTitleEl = document.createElement("h1");
+            newTitleEl.className = "blog-title";
+            newTitleEl.textContent = data.post.title;
+    
+            const newDescEl = document.createElement("p");
+            newDescEl.className = "blog-disc";
+            newDescEl.textContent = data.post.description;
+            
+            titleInput.replaceWith(newTitleEl);
+            descInput.replaceWith(newDescEl);
+            
+            saveBTn.remove();
+          } else {
+            alert(data.message);
+          }
+        }catch(err){
+          alert("Failed to update the post. Please try again.");
         }
       });
     }

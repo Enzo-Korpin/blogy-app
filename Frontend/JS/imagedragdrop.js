@@ -17,21 +17,21 @@ dropzone.addEventListener("drop", (e) => {
 
   const file = e.dataTransfer.files[0];
   if (file && file.type.startsWith("image/")) {
-    input.files = e.dataTransfer.files; 
+    input.files = e.dataTransfer.files;
     alert("Image selected: " + file.name);
   } else {
     alert("Please drop a valid image file.");
   }
 });
 
-form.addEventListener("submit", async(e) => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault(); // Prevent form submission for demonstration purposes
- 
+
   const title = document.getElementById("title").value;
   const description = document.getElementById("content").value;
   const image = input.files[0];
 
-  if(!title || !description){
+  if (!title || !description) {
     alert("Please fill in all fields.");
     return;
   }
@@ -42,21 +42,25 @@ form.addEventListener("submit", async(e) => {
   formData.append("imageInput", image);
 
 
+  try {
 
-const res = await fetch("/posts/create", {
-  
-  
-  method: "POST",
-  credentials: "include",
-  body: formData,
-});
-const data = await res.json();
-if (res.ok) {
-  alert("Post created successfully!");
-  window.location.href = "/users/dashBoard";
+    const res = await fetch("/posts/create", {
 
-} else {
-    alert(data.message || "Error creating post.");
+
+      method: "POST",
+      credentials: "include",
+      body: formData,
+    });
+    const data = await res.json();
+    if (res.ok) {
+      alert("Post created successfully!");
+      window.location.href = "/users/dashBoard";
+
+    } else {
+      alert(data.message || "Error creating post.");
+    }
+  } catch (err) {
+    alert("Failed to create the post. Please try again.");
   }
 });
 
