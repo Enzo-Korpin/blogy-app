@@ -6,12 +6,23 @@ function closeComments() {
     document.body.style.overflow = "auto";
 }
 
+function checkSessionForComments(res){
+    if (res.redirected) {
+        alert("Failed to load comments. Please try again later.");
+        window.location.href = res.url; 
+        return true;
+      }
+      return false;
+}
+
 async function showComments(postId) {
     try {
 
         const res = await fetch(`/comments/${postId}/comments`);
+        if (checkSessionForComments(res)) return;
+
+        
         const comments = await res.json();
-        console.log(comments);
         const container = document.getElementById("show-comments");
         //   const commentsContainer = document.getElementById("comments-container");
 

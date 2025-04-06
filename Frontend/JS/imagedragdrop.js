@@ -24,6 +24,15 @@ dropzone.addEventListener("drop", (e) => {
   }
 });
 
+function checkSessionForCreate(res){
+  if (res.redirected) {
+    alert("Failed to create the post. Please try again.");
+      window.location.href = res.url; 
+      return true;
+    }
+    return false;
+}
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault(); // Prevent form submission for demonstration purposes
 
@@ -51,6 +60,9 @@ form.addEventListener("submit", async (e) => {
       credentials: "include",
       body: formData,
     });
+
+    if (checkSessionForCreate(res)) return;
+
     const data = await res.json();
     if (res.ok) {
       alert("Post created successfully!");

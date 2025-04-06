@@ -1,4 +1,12 @@
 //this is for edit post
+function checkSessionForEdit(res) {
+  if (res.redirected) {
+    alert("Failed to update the post. Please try again.");
+    window.location.href = res.url;
+    return true;
+  }
+  return false;
+}
 
 document.addEventListener("click", async (e) => {
     if (e.target.classList.contains("fa-pen-to-square")){
@@ -37,6 +45,8 @@ document.addEventListener("click", async (e) => {
             },
             body: JSON.stringify({ title: newTitle , description: newDesc }),
           });
+          if (checkSessionForEdit(res)) return;
+
           const data = await res.json();
           
           if (res.ok && data.post) {
