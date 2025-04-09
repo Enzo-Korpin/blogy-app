@@ -89,7 +89,9 @@ const handleDeletePost = async (req, res) => {
 
 const showAllPosts = async (req, res) => {
     try {
-        const posts = await Posts.find().sort({createdAt: -1});
+        const posts = await Posts.find({
+            userID: { $ne: req.session.userId },
+        }).sort({createdAt: -1});
         res.status(200).json(posts);
     } catch (err) {
         console.error(err);
