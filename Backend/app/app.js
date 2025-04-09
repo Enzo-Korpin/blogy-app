@@ -3,7 +3,7 @@ const postRoute = require("../routes/postRoutes.js");
 const commentRoute = require("../routes/commentRoutes.js")
 const express = require("express");
 const app = express();
-
+require('../crons/postOfTheWeek.js');
 const sessionMiddleware = require("../middlewares/session.js");
 const path = require("path");
 const bodyParser = require("body-parser");

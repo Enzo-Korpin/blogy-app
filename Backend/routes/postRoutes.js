@@ -15,6 +15,10 @@ router.delete("/posts/:postId", postsController.handleDeletePost)
 
 router.get("/home", postsController.showAllPosts)
 
+router.post("/interact/:postId", postsController.handleInteractPost)
+
+router.get("/postOfTheWeek", postsController.postOfTheWeek)
+
 
 module.exports = router;
 

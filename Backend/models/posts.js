@@ -12,15 +12,12 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
 
-  like: {
-    type: Number,
-    default: 0
-  },
-
-  dislike: {
-    type: Number,
-    default: 0
-  },
+  like: [{
+    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  }],
+  dislike: [{
+    type: mongoose.Schema.Types.ObjectId, ref: 'User'
+  }],
 
   commentCount: {
     type: Number,

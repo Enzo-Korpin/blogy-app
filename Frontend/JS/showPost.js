@@ -32,11 +32,11 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="blog-card-interactive">
             <div class="like">
               <i class="fa-solid fa-thumbs-up"></i>
-              <h3>${post.like || 0}</h3>
+              <h3>${post.like.length || 0}</h3>
             </div>
             <div class="dislike">
               <i class="fa-solid fa-thumbs-down"></i>
-              <h3>${post.dislike || 0}</h3>
+              <h3>${post.dislike.length || 0}</h3>
             </div>
             <div class="comment" onclick="showComments('${post._id}')">
                   <i class="fa-solid fa-comment"></i>
