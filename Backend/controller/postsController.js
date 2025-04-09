@@ -90,6 +90,7 @@ const handleDeletePost = async (req, res) => {
 
 const showAllPosts = async (req, res) => {
     try {
+<<<<<<< HEAD
         const userId = req.session.userId
         const posts = await Posts.find().sort({ createdAt: -1 });
         const formattedPosts = posts.map(post => ({
@@ -98,6 +99,12 @@ const showAllPosts = async (req, res) => {
             dislikedByCurrentUser: post.dislike.some(id => id.toString() === userId)
         }));
         res.status(200).json(formattedPosts);
+=======
+        const posts = await Posts.find({
+            userID: { $ne: req.session.userId },
+        }).sort({createdAt: -1});
+        res.status(200).json(posts);
+>>>>>>> 9068e72c50b37f9cf006d58b127d54b7c5a806e1
     } catch (err) {
         console.error(err);
         res.status(500).json({ message: "Server error" });
