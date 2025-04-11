@@ -19,6 +19,10 @@ router.post("/interact/:postId", postsController.handleInteractPost)
 
 router.get("/postOfTheWeek", postsController.postOfTheWeek)
 
+router.get("/searchPage", postsController.handleSearchPage)
+
+router.get("/search", postsController.handleSearch)
+
 
 module.exports = router;
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/searchedPage.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <img src="/Images/blogy-logo-2.png" alt="blogy-logo">
+            </div>
+            <nav class="nav-bar">
+                <a href="/users/post">Home</a>
+                <a href="/users/dashBoard">Dashboard </a>
+                <!-- <a href="/posts/create">Create post</a> -->
+                <a href="/users/about">About Us</a>
+                <a href="/users/contact">Contact</a>
+                <div id="avatar-container">
+                    <img src="../../Images/avatars/default.png" alt="" id="avatar-img">
+                    <form action="/users/logout">
+                        <button type="submit" id="logout-btn">Logout</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <div class="blog-wrapper">
+            <div class="show-comments hide" id="show-comments">
+                <div class="close">
+                    <i class="fa-solid fa-xmark" onclick="closeComments()"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../JS/showSearched.js"></script>
+    <script src="/JS/showComment.js"></script>
+    <script src="/JS/logout-btn.js"></script>
+    <script src="/JS/printAvatar.js"></script>
+</body>
+
+</html>

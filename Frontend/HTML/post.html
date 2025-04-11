@@ -57,8 +57,8 @@
             <h1 class="search-heading">Search Blog Title</h1>
             <div class="search-input">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <form action="/search" method="GET">
-                    <input type="text" name="q" placeholder="Search" required>
+                <form id="search-form" action="/posts/search" method="GET">
+                    <input type="text" name="q" placeholder="Search" id="searchInput" required>
                 </form>
             </div>
             <div class="create-post">
@@ -76,42 +76,11 @@
                     </div>
 
                 </div>
-                <!-- <div class="blog-card">
-                    <div class="blog-card-image">
-                        <img src="../../Images/big-logo.png" alt="">
-                    </div>
-                    <h1 class="blog-card-title">Title Blog</h1>
-                    <div class="wrap-user-name-date">
-                        <div class="blog-card-user-name">userName</div>
-                        <div class="blog-card-date">15 Dec 2025</div>
-                    </div>
-                    <p class="blog-card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, quam debitis voluptatibus
-                        atque distinctio, eius omnis unde ut eum aspernatur consectetur corporis? Doloremque
-                        voluptatibus ex, id ab ad fugiat dignissimos aspernatur perspiciatis distinctio, deserunt
-                        repellendus gskjijrpojor rgopgrnklergjpogrnipgr grpogrnijorpj;grk gropgrjpogrkokoegkog
-                        egomgrpok[okoeg eopgrnkegtm]
-                    </p>
-                    <div class="blog-card-interactive">
-                        <div class="like">
-                            <i class="fa-solid fa-thumbs-up"></i>
-                            <h3>20</h3>
-                        </div>
-                        <div class="dislike">
-                            <i class="fa-solid fa-thumbs-down"></i>
-                            <h3>20</h3>
-                        </div>
-                        <div class="comment">
-                            <i class="fa-solid fa-comment"></i>
-                            <h3>20</h3>
-                        </div>
-                    </div>
-                </div>-->
-
-
             </div>
         </section>
+        <script src="../JS/search.js"></script>
         <script src="/JS/POTWfetch.js"></script>
+        <script src="../JS/search.js"></script>
         <script src="/JS/printAvatar.js"></script>
         <script src="/JS/showAllPosts.js"></script>
         <script src="/JS/showComment.js"></script>
