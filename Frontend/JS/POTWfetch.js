@@ -22,6 +22,8 @@ async function fetchPostOfTheWeek() {
         }
         if(checkSessionForPOTW(res)) return;
         const post = await res.json();
+        if(!post.postId)
+            return;
         img.src = post.postId.image;
         title.textContent = post.postId.title;
         description.textContent = post.postId.description;

@@ -38,7 +38,7 @@
             <div class="blog-of-the-week">
                 <div class="blog-of-the-week-blog">
                     <div class="blog-of-the-week-image">
-                        <img src="" alt="">
+                        <img src="../../Images/avatars/default.png" alt="">
                     </div>
                     <h1 class="blog-of-the-week-title"></h1>
                     <div class="wrap-user-name-date">
@@ -58,7 +58,7 @@
             <div class="search-input">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <form id="search-form" action="/posts/search" method="GET">
-                    <input type="text" name="q" placeholder="Search" id="searchInput" required>
+                    <input type="text" name="q" placeholder="Search" id="searchInput" minlength="3" required>
                 </form>
             </div>
             <div class="create-post">
@@ -69,6 +69,7 @@
 
         <!-- All Blogs -->
         <section class="section-3">
+            <h1 class="all-blogs-heading">Blogs</h1>
             <div class="blog-wrapper">
                 <div class="show-comments hide" id="show-comments">
                     <div class="close">
