@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       postCard.dataset.id = post._doc._id;
       postCard.innerHTML = `
             <div class="blog-card-image">
-                    <img src="${post._doc.image}" alt="Post Image"  style="width: 100%; height: 100%;" />
+                    <img src="${post._doc.image}" loading="lazy" alt="Post Image"  style="width: 100%; height: 100%;" />
             </div>
     
             <h1 class="blog-card-title">${post._doc.title}</h1>
