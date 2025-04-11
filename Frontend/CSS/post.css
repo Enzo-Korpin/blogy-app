@@ -74,6 +74,7 @@ header {
 #avatar-img {
     width: 100%;
     height: 100%;
+    border: 0.3rem solid #EAB308;
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.3s;
@@ -137,7 +138,7 @@ header {
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.44);
     padding: 2rem;
     margin-top: 9rem;
-    background-color: #35384f;
+    background-color: #414d63;
 
 }
 
@@ -301,14 +302,9 @@ header {
 .blog-wrapper {
     display: flex;
     justify-content: space-around;
-<<<<<<< HEAD
     align-items: center;
     flex-direction: column;
-    margin-top: 20rem;
-=======
-    align-items: flex-start;
     margin-top: 10rem;
->>>>>>> 79563e833e7324605bbe002c9aa88fa9a9fdf1ed
     flex-wrap: wrap;
     gap: 10rem;
 }
@@ -332,7 +328,7 @@ header {
     box-shadow: 1rem 1rem 4rem rgba(0, 0, 0, 0.44), -1rem -1rem 4rem rgba(0, 0, 0, 0.44);
     padding: 1rem;
     margin-top: 5rem;
-    background-color: #35384f;
+    background-color: #414d63;
 }
 
 .blog-card-image {
