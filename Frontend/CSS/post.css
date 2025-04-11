@@ -579,6 +579,48 @@ header {
     background-color: #0056b3;
 }
 
+.liked {
+    color: #3b82f6;
+    animation: like 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    
+}
+
+
+
+.disliked {
+    color: #800505;
+    animation: dislike 0.5s ease-in-out;
+    animation-fill-mode: forwards;
+    
+}
+
+
+@keyframes like {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.5)rotate(-10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+    
+}
+@keyframes dislike {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.5)rotate(10deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+    
+}
+
 
 
 @media (max-width: 1250px) {

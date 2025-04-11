@@ -2,6 +2,7 @@ const Posts = require("../models/posts");
 const path = require("path");
 const User = require("../models/users");
 const WeeklyPost = require("../models/weeklyPost");
+const { compare } = require("bcrypt");
 
 const createPost = async (req, res) => {
     try {
@@ -126,6 +127,7 @@ const handleInteractPost = async (req, res) => {
                 }
                 likeStyle = true;
                 dislikeStyle = false;
+
             } else {
                 post.like.pull(req.session.userId);
                 likeStyle = false;
@@ -138,6 +140,7 @@ const handleInteractPost = async (req, res) => {
                 }
                 dislikeStyle = true;
                 likeStyle = false;
+
             } else {
                 post.dislike.pull(req.session.userId);
                 dislikeStyle = false;
