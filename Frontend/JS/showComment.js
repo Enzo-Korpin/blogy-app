@@ -39,7 +39,11 @@ async function userCommentDelete(postId, commentId) {
 
         if (data.success) {
             alert("Comment deleted.");
-            showComments(postId); // Refresh
+            const postCard = document.querySelector(`.blog-card[data-id="${postId}"]`);
+            const commentCount = postCard.querySelector(".comment h3");
+            commentCount.textContent = data.commentCount 
+
+            showComments(postId); 
         } else {
             alert(`Failed to delete comment: ${data.error || "Unknown error"}`);
         }
@@ -62,6 +66,8 @@ async function showComments(postId) {
         const data = await res.json();
         const comments = data.comments || [];
         const session = data.session || { userId: null, pathAvatar: "/Images/avatars/default.png" };
+
+
 
         const container = document.getElementById("show-comments");
         container.innerHTML = `
@@ -154,7 +160,12 @@ async function showComments(postId) {
 
                 if (data.comment) {
                     input.value = "";
-                    showComments(postId); // Refresh
+                    const postCard = document.querySelector(`.blog-card[data-id="${postId}"]`);
+                    const commentCount = postCard.querySelector(".comment h3");
+                    const currentCount = parseInt(commentCount.textContent);
+                    commentCount.textContent = currentCount + 1;
+
+                    showComments(postId);
                 } else {
                     alert("Failed to add comment.");
                 }

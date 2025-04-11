@@ -2,7 +2,7 @@
 //this for show all posts
 function checkSessionForInteract(res) {
   if (res.redirected) {
-    alert("Failed to load comments. Please try again later.");
+    alert("Failed to interact with the post. Please try again later.");
     window.location.href = res.url;
     return true;
   }
@@ -26,6 +26,7 @@ async function likePost(postId) {
   const dislikeIcon = postCard.querySelector(".dislike i");
   const likeCount = postCard.querySelector(".like h3");
   const dislikeCount = postCard.querySelector(".dislike h3");
+
   if (data.likeStyle) {
     likeIcon.classList.add("liked");
     dislikeIcon.classList.remove("disliked");
@@ -52,6 +53,7 @@ async function dislikePost(postId) {
   const dislikeIcon = postCard.querySelector(".dislike i");
   const likeCount = postCard.querySelector(".like h3");
   const dislikeCount = postCard.querySelector(".dislike h3");
+  
   if (data.dislikeStyle) {
     dislikeIcon.classList.add("disliked");
     likeIcon.classList.remove("liked");

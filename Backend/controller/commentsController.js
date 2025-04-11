@@ -55,8 +55,12 @@ const createComment = async (req, res) => {
             userID: userId,
             postID: postId
         });
+        const post = await Posts.findById(postId);
 
-        res.status(201).json({ message: "Comment created", comment });
+
+        res.status(201).json({ message: "Comment created",
+             comment,
+            commentCount: post.commentCount });
 
     } catch (err) {
         res.status(500).json({ error: "Server error" })
@@ -67,7 +71,7 @@ const deleteComment = async (req, res) => {
 
     try {
         const { commentId } = req.params;
-
+        
         const userId = req.session.userId;
         if (!commentId || !userId) {
             return res.status(400).json({ success: false, error: "Missing data" });
@@ -80,7 +84,17 @@ const deleteComment = async (req, res) => {
             return res.status(403).json({ error: "Unauthorized" });
         }
         await comment.deleteOne();
-        res.status(200).json({ success: true });
+
+        const lenOfComments = await Comment.countDocuments({ postID: comment.postID });
+
+        const post = await Posts.findById(comment.postID);
+
+        post.commentCount = lenOfComments;
+        await post.save();
+        
+        res.status(200).json({ success: true, commentCount: lenOfComments });
+        
+         ;
 
     } catch (err) {
         console.error("Error deleting comment:", err);

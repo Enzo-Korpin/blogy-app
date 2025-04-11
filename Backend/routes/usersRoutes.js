@@ -21,6 +21,11 @@ router.get("/register", usersController.handleRegisterRender)
 
 router.get("/dashBoard", usersController.handleDashBoardRender)
 
+router.get("/contact", usersController.handleContactRender)
+
+router.get("/about", usersController.handleAboutRender)
+
+
 router.get("/avatar", usersController.handleAvatarRender)
 
 module.exports = router;
