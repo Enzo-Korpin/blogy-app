@@ -60,7 +60,7 @@ async function dislikePost(postId) {
 
 window.addEventListener("DOMContentLoaded", () => {
     const posts = JSON.parse(localStorage.getItem('searchResults'));
-    const container = document.querySelector(".blog-wrapper");
+    const container = document.querySelector(".blog-wrapper-search");
 
     if (!posts || posts.length === 0) {
         container.innerHTML = "<h2>No Posts Found</h2>";
@@ -74,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
         postCard.dataset.id = post._doc._id;
         postCard.innerHTML = `
             <div class="blog-card-image">
-                    <img src="${post._doc.image}" alt="Post Image"  style="width: 100%; height: 100%;" />
+                    <img src="${post._doc.image}" loading="lazy" alt="Post Image"  style="width: 100%; height: 100%;" />
             </div>
     
             <h1 class="blog-card-title">${post._doc.title}</h1>

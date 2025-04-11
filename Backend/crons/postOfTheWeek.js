@@ -4,6 +4,8 @@ const Post = require('../models/posts');
 const WeeklyPost = require('../models/weeklyPost');
 
 // Runs every day at midnight
+
+
 cron.schedule('0 0 * * 6', async () => {
     try {
         const oneWeekAgo = new Date();
