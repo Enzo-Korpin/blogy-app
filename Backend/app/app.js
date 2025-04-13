@@ -1,6 +1,7 @@
 const usersRoute = require("../routes/usersRoutes.js");
 const postRoute = require("../routes/postRoutes.js");
 const commentRoute = require("../routes/commentRoutes.js")
+const adminRoute = require("../routes/adminRoutes.js")
 const express = require("express");
 const app = express();
 require('../crons/postOfTheWeek.js');
@@ -27,6 +28,7 @@ app.use(checkSession)
 app.use("/users", usersRoute);
 app.use("/posts", postRoute);
 app.use("/comments", commentRoute);
+app.use("/admin", adminRoute);
 
 
 
