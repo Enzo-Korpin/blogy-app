@@ -280,6 +280,19 @@ header {
     font-weight: 700;
 }
 
+.adminBtn{
+    width: 10rem;
+    height: 5rem;
+    border-radius: 2rem;
+    background-color: #099cbd;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin-top:2rem ;
+}
+
 
 .section-3 {
     width: 99%;
@@ -306,7 +319,7 @@ header {
     flex-direction: column;
     margin-top: 10rem;
     flex-wrap: wrap;
-    gap: 10rem;
+    /* gap: 10rem; */
 }
 .blog-wrapper-search{
     display: flex;
@@ -319,7 +332,7 @@ header {
 }
 
 .blog-card {
-    width: 50%;
+    width: 45%;
     min-height: 50rem;
     display: flex;
     flex-direction: column;
@@ -333,7 +346,7 @@ header {
 
 .blog-card-image {
     align-self: center;
-    max-width: 100%;
+    max-width: 70%;
     height: 100%;
     overflow: hidden;
 }
@@ -349,6 +362,9 @@ header {
     letter-spacing: 0.1rem;
     text-transform: capitalize;
     margin: 1rem 0rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .blog-card-user-name {
@@ -366,6 +382,9 @@ header {
 .blog-card-text {
     font-size: 1.5rem;
     line-height: 2.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 100%;
 
 }
 

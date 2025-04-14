@@ -11,6 +11,7 @@ function checkSessionForInteract(res) {
 
 
 
+
 async function likePost(postId) {
   const res = await fetch(`/posts/interact/${postId}`, {
     method: "POST",
@@ -53,7 +54,7 @@ async function dislikePost(postId) {
   const dislikeIcon = postCard.querySelector(".dislike i");
   const likeCount = postCard.querySelector(".like h3");
   const dislikeCount = postCard.querySelector(".dislike h3");
-  
+
   if (data.dislikeStyle) {
     dislikeIcon.classList.add("disliked");
     likeIcon.classList.remove("liked");
@@ -72,9 +73,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     const res = await fetch("/posts/home");
     if (checkSessionForInteract(res)) return;
     const posts = await res.json();
+    
     const container = document.querySelector(".blog-wrapper");
+    const section = document.querySelector(".section-2");
+    if (posts.some(post => post.admin)) {
+      console.log("Admin is true in at least one post");
+    
+      section.innerHTML += `<button class="adminBtn">go to admin</button>`;
+      const adminBtn = document.querySelector(".adminBtn");
+    
+      adminBtn.addEventListener("click", () => {
+        window.history.replaceState({}, document.title, "/admin/adminPage");
+        window.location.href = "";
+      });
+    }
 
     posts.forEach((post) => {
+      
       const postCard = document.createElement("div");
       postCard.className = "blog-card";
       postCard.dataset.id = post._doc._id;
@@ -111,6 +126,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       container.appendChild(postCard);
     });
   } catch (err) {
+    console.error(err)
     alert("Failed to load posts. Please try again later.");
   }
 });

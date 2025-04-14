@@ -92,9 +92,14 @@ const handleDeletePost = async (req, res) => {
 const showAllPosts = async (req, res) => {
     try {
         const userId = req.session.userId
+        const user = await User.findById(userId)
+        
+
         const posts = await Posts.find().sort({ createdAt: -1 });
         const formattedPosts = posts.map(post => ({
             ...post,
+
+            admin:user.isAdmin,
             likedByCurrentUser: post.like.some(id => id.toString() === userId),
             dislikedByCurrentUser: post.dislike.some(id => id.toString() === userId)
         }));

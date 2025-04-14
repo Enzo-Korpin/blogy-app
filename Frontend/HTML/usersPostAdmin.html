@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/dashBoard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="navbar-left">
+            <img src="/Images/blogy-logo-lightgray_1.png" alt="Logo of blogy" id="logo">
+            <div id="avatar-container">
+                <img src="../../Images/avatars/default.png" alt="" id="avatar-img">
+                <form action="/users/logout">
+                    <button type="submit" id="logout-btn">Logout</button>
+                </form>
+            </div>
+            <a href="/users/post">Home</a>
+            <a href="/users/dashBoard">Dashboard</a>
+            <a href="/users/about">About Us</a>
+            <a href="/users/contact">Contact</a>
+        </aside>
+
+        <main class="blog-show">
+
+            <div class="show-comments hide" id="show-comments">
+                <div class="close">
+                    <i class="fa-solid fa-xmark" onclick="closeComments()"></i>
+                </div> 
+                
+                 <div class="comment-container" id="comments-container">
+                     for user name and comment he writes from {place-of-comments} 
+                    <div class="place-of-comments">
+                        <div class="img-container">
+                            <img src="../../Images/avatars/default.png" alt="" id="avatar-img">
+                        </div>
+                         <i class="fa-solid fa-circle-user"></i> 
+                        <div class="place-of-usercomment">
+                            <h2 class="usernameComments">Karam taher</h2>
+                            <p class="para-comments">nice photo i love this dude T-T</p>
+                        </div>  
+                    </div>
+                     
+                    <h2 class="timeComments">15 Dec 2025</h2>
+                    <hr>
+                     
+                 </div>
+
+            </div>
+            
+        </main>
+    </div>
+    <script src="../JS/logout-btn.js"></script>
+    <script src="../JS/printAvatar.js"></script>
+    <!-- <script src="/JS/showPost.js"></script> -->
+    <!-- <script src="/JS/editPost.js"></script> -->
+    <script src="/JS/deletePostAdmin.js"></script>
+    <script src="/JS/showComment.js"></script>
+    <script src="/JS/postsOfUser.js"></script>
+
+
+</body>
+
+</html>
+
+<!-- this is userPOstAdmin.html -->

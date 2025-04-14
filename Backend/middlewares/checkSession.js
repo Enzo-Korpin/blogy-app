@@ -1,4 +1,6 @@
-const checkSession = (req, res, next) => {
+
+const User = require("../models/users.js");
+const checkSession = async (req, res, next) => {
   const publicRoutes = [
     "/users/login",
     "/users/register",
@@ -14,14 +16,14 @@ const checkSession = (req, res, next) => {
     return res.redirect("/users/logout");
   }
 
-  // if (req.path.startsWith("/admin")) {
-  //   if (!req.session.isAdmin) {
-
-  //     return res.status(403).send("Access Denied.");
-  //   }
-  // }
+  if (req.path.startsWith("/admin")) {
+    const user = await User.findById(req.session.userId);
+    if (!user || !user.isAdmin) { 
+      return res.status(403).send("Access Denied.");
+    }
+  }
 
   return next();
 };
 
-module.exports = checkSession
+module.exports = checkSession;
