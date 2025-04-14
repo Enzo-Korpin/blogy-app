@@ -30,6 +30,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: "../../Images/avatars/default.png"
     },
+    
 
 
 
