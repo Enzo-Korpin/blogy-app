@@ -73,15 +73,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const res = await fetch("/posts/home");
     if (checkSessionForInteract(res)) return;
     const posts = await res.json();
-    
+
     const container = document.querySelector(".blog-wrapper");
-    const section = document.querySelector(".section-2");
+    const section = document.querySelector(".section-3");
     if (posts.some(post => post.admin)) {
       console.log("Admin is true in at least one post");
-    
-      section.innerHTML += `<button class="adminBtn">go to admin</button>`;
+
+      const divAdmin = document.createElement("div");
+      divAdmin.className = "adminDiv";
+      divAdmin.innerHTML = "<button class='adminBtn'>Go to Admin</button>";
+      section.parentNode.insertBefore(divAdmin, section);
       const adminBtn = document.querySelector(".adminBtn");
-    
+
       adminBtn.addEventListener("click", () => {
         window.history.replaceState({}, document.title, "/admin/adminPage");
         window.location.href = "";
@@ -89,7 +92,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     posts.forEach((post) => {
-      
+
       const postCard = document.createElement("div");
       postCard.className = "blog-card";
       postCard.dataset.id = post._doc._id;

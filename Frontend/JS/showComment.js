@@ -132,7 +132,7 @@ async function showComments(postId) {
             <div class="img-container">
                 <img src="${session.pathAvatar}" alt="" id="avatar-img">
             </div>
-            <input type="text" placeholder="Add a comment..." id="comment-input">
+            <input type="text" placeholder="Add a comment..." id="comment-input" maxlength=255>
             <button id="add-comment-btn">Add</button>
         `;
         container.appendChild(addCommentForm);
