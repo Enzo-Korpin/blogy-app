@@ -12,4 +12,8 @@ router.get("/userposts/:userId",adminController.showposts)
 
 router.delete("/posts/:postId",adminController.deletePost)
 
+router.post("/block/:userId", adminController.blockUser)
+
+router.post("/unblock/:userId", adminController.unblockUser)
+
 module.exports = router;
