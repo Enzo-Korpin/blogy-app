@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       postCard.dataset.id = post._doc._id;
       postCard.innerHTML = `
             <div class="blog-card-image">
-                    <img src="${post._doc.image}" loading="lazy" alt="Post Image"  style="width: 100%; height: 100%;" />
+                    <img src="${post._doc.image}" title="click to see full img" class="zoomable-image" loading="lazy" alt="Post Image"   />
             </div>
     
             <h1 class="blog-card-title">${post._doc.title}</h1>
@@ -132,6 +132,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(err)
     alert("Failed to load posts. Please try again later.");
   }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.addEventListener("click", function(e) {
+    if (e.target.classList.contains("zoomable-image")) {
+      const overlay = document.getElementById("img-zoom-overlay");
+      const zoomImg = document.getElementById("img-zoom-big");
+      zoomImg.src = e.target.src; 
+      overlay.style.display = "flex";
+    }
+  });
+
+  document.getElementById("img-zoom-overlay").addEventListener("click", function() {
+    this.style.display = "none";
+    document.getElementById("img-zoom-big").src = "";
+  });
 });
 
 //this for show all posts

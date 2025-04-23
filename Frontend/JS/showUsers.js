@@ -80,33 +80,25 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
     const users = await res.json();
-
+    const tbody = document.querySelector(".table-user tbody")
     users.forEach(user => {
-
-        const main = document.querySelector(".show");
-        const info = document.createElement("div");
-        info.className = "info";
-        info.innerHTML = `
-            <div class="user-info">
-                <h1 class="info-user">User:</h1>
-                <h1 class="git-info">${user.userName}</h1>
-                <h1 class="info-user">Posts:</h1>
-                <h1 class="git-info">${user.numberOfPosts}</h1>
-                <h1 class="info-user">Created in:</h1>
-                <h1 class="git-info">${new Date(user.createdAt).toLocaleDateString()}</h1>
-                <a href="/admin/userposts?userId=${user.userId}">See all posts</a>
-                ${user.isBlocked ? `<h1 class="block-${user.userId}">Unblock</h1>
-                <button class="block-btn-${user.userId}" onclick="unblock('${user.userId}')">
-                    <i class="fa-solid fa-user-check"></i>
-                </button>`
-                :
-                `<h1 class="block-${user.userId}">Block</h1>
-                <button class="block-btn-${user.userId}" onclick="block('${user.userId}')">
-                    <i class="fa-solid fa-user-xmark"></i>
-                </button>`}
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${user.userName}</td>
+        <td>${user.numberOfPosts}</td>
+        <td>${new Date(user.createdAt).toLocaleDateString()}</td>
+        <td><a href="/admin/userposts?userId=${user.userId}">See all posts</a></td>
+        <td>
+            <div>
+                <h1 class="block-${user.userId} ${user.isBlocked ? "not-safe" : "safe"} " >${user.isBlocked ? 'Unblock' : 'Block'}</h1>
+                <button class="block-btn-${user.userId}" onclick="${user.isBlocked ? `unblock('${user.userId}')` : `block('${user.userId}')`}">
+                    <i class="fa-solid ${user.isBlocked ? 'fa-user-check' : 'fa-user-xmark'}"></i>
+                </button>
             </div>
-        `;
-        main.appendChild(info);
-    });
+          
+        </td>
+      `;
 
-})
+        tbody.appendChild(tr);
+    })
+});

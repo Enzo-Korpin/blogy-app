@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../CSS/adminUser.css">
+    <link rel="stylesheet" href="../CSS/adminUserTable.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -18,6 +18,31 @@
             <a href="/users/contact">Contact</a>
         </aside>
         <main class="show">
+            <div class="info">
+                <table class="table-user">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Posts</th>
+                            <th>Created in</th>
+                            <th>all posts</th>
+                            <th>Block/Unblock</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <!-- <tr>
+                            <td>Karam Taher</td>
+                            <td>25</td>
+                            <td>15 Dec 2025</td>
+                            <td><a href="#">See all posts</a> </td>
+                            <td><i class="fa-solid fa-user-xmark"></i></td>
+                        </tr> -->
+                    </tbody>
+                    
+                    
+                </table>
+            </div>
             <!-- <div class="info">
                 <div class="user-info">
                     <h1 class="info-user">User:</h1>
@@ -35,6 +60,7 @@
             
         </main>
     </div>
+    
     <script src="../JS/showUsers.js"></script>
 
 </body>
