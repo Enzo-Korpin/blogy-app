@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       const adminBtn = document.querySelector(".adminBtn");
 
       adminBtn.addEventListener("click", () => {
-        window.history.replaceState({}, document.title, "/admin/adminPage");
-        window.location.href = "";
+        
+        window.location.href = "/admin/adminPage";
       });
     }
 
