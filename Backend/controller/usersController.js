@@ -17,9 +17,9 @@ const handleRegister = async (req, res) => {
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        let avatarPath = "../../Images/avatars/default.png";
+        let avatarPath = "/Images/avatars/default.png"
         if (req.file) {
-            avatarPath = `../../Images/avatars/${req.file.filename}`; 
+            avatarPath = `/Images/avatars/${req.file.filename}`; 
         }
 
         await Users.create({
