@@ -19,7 +19,8 @@ const handleRegister = async (req, res) => {
 
         let avatarPath = "../../Images/avatars/default.png";
         if (req.file) {
-            avatarPath = `../../Images/avatars/${req.file.filename}`; 
+            avatarPath = `/Images/avatars/${req.file.filename}`; 
+            
         }
 
         await Users.create({
