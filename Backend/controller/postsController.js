@@ -10,7 +10,9 @@ const createPost = async (req, res) => {
             return res.status(400).json({ message: "No file uploaded" });
         }
         const { title, description } = req.body;
-        const imagePath = "../../Images/imgPosts/" + req.file.filename;
+        // const imagePath = "../../Images/imgPosts/" + req.file.filename;
+        const imagePath = "/Images/imgPosts/" + req.file.filename;
+
         const userName = await User.findById(req.session.userId);
         if (!userName) {
             return res.status(404).json({ message: "Your session has been expired please login again" });

@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://127.0.0.1:27017/blogy");
+// mongoose.connect("mongodb://127.0.0.1:27017/blogy");
+// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const commentSchema = new mongoose.Schema({
 

@@ -2,7 +2,7 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 
 const sessionMiddleware = session({
-  secret: "mySuperSecretSessionKey123!",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
