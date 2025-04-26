@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "start": "node --watch backend/app/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -29,9 +30,5 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.14"
-  },
-  "scripts": {
-    "start": "node --watch backend/app/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-}
+  }
 }
