@@ -24,6 +24,10 @@ document.getElementById("loginform").addEventListener("submit", async (event) =>
       credentials: "include",
       body: JSON.stringify({ userName, password }),
     });
+    if(res.status === 429) {
+      alert("Too many requests, please try again later.");
+      return;
+    }
 
     const data = await res.json();
     if (res.ok) {
@@ -42,7 +46,6 @@ document.getElementById("loginform").addEventListener("submit", async (event) =>
       card.appendChild(ul)
     }
   } catch (err) {
-    console.error("Failed to login:", err);
     alert("An error occurred while logging in. Please try again.");
   }
 });

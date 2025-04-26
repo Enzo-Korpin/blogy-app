@@ -4,12 +4,12 @@ const usersController = require("../controller/usersController.js");
 const registerValidator = require("../validation/registerValidator.js");
 const loginValidator = require("../validation/loginValidator.js");
 const uploadAvatar = require("../middlewares/multerAvatar.js");
-
+const limiter = require("../middlewares/rateLimit.js");
 
 
 router.post("/register", uploadAvatar.single("avatar"), registerValidator.registerValidator, usersController.handleRegister)
 
-router.post("/login", loginValidator.loginValidator, usersController.handleLogin)
+router.post("/login", limiter, loginValidator.loginValidator, usersController.handleLogin)
 
 router.get("/logout", usersController.handleLogout)
 
