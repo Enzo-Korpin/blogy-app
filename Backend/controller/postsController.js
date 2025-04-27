@@ -11,9 +11,9 @@ const createPost = async (req, res) => {
             return res.status(400).json({ message: "No file uploaded" });
         }
         const { title, description } = req.body;
-        
-        const cleanTitle = leoProfanity.clean(title); 
-        const cleanDescription= leoProfanity.clean(description)
+
+        const cleanTitle = leoProfanity.clean(title);
+        const cleanDescription = leoProfanity.clean(description)
 
         // const imagePath = "../../Images/imgPosts/" + req.file.filename;
         const imagePath = "/Images/imgPosts/" + req.file.filename;
@@ -58,8 +58,8 @@ const handleEditPost = async (req, res) => {
         if (!title || !description) {
             return res.status(400).json({ message: "Please fill in all fields" });
         }
-        const cleanTitle = leoProfanity.clean(title); 
-        const cleanDescription= leoProfanity.clean(description)
+        const cleanTitle = leoProfanity.clean(title);
+        const cleanDescription = leoProfanity.clean(description)
         const post = await Posts.findById(postId);
         if (!post) {
             return res.status(403).json({ message: "Post not found" });
@@ -102,13 +102,13 @@ const showAllPosts = async (req, res) => {
     try {
         const userId = req.session.userId
         const user = await User.findById(userId)
-        
+
 
         const posts = await Posts.find().sort({ createdAt: -1 });
         const formattedPosts = posts.map(post => ({
             ...post,
 
-            admin:user.isAdmin,
+            admin: user.isAdmin,
             likedByCurrentUser: post.like.some(id => id.toString() === userId),
             dislikedByCurrentUser: post.dislike.some(id => id.toString() === userId)
         }));
@@ -190,11 +190,18 @@ const postOfTheWeek = async (req, res) => {
 
 const handleSearch = async (req, res) => {
     try {
+
+        function escapeRegex(str) {
+            return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+        
         const searchTerm = req.query.q;
         const userId = req.session.userId;
+
+        const safeSearchTerm = escapeRegex(searchTerm);
         const posts = await Posts.find({
             title: {
-                $regex: searchTerm,
+                $regex: safeSearchTerm,
                 $options: 'i',
             }
         })
