@@ -22,7 +22,7 @@ const handleRegister = async (req, res) => {
             avatarPath = `/Images/avatars/${req.file.filename}`; 
             
         }
-
+        
         await Users.create({
             fullName: fullName,
             userName: userName,

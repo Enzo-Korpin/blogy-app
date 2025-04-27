@@ -1,11 +1,18 @@
 const { check } = require('express-validator');
 const Users = require("../models/users");
+const leoProfanity = require('leo-profanity');
 
 const registerValidator = [
   check("fullName")
     .notEmpty().withMessage("Full Name is required")
     .matches(/^[a-zA-Z\s]+$/).withMessage("Full name contain Only letters and spaces allowed")
-    .isLength({ min: 3 }).withMessage("Fullname must be at least 3 characters"),
+    .isLength({ min: 3 }).withMessage("Fullname must be at least 3 characters")
+    .custom(value => {
+      if (leoProfanity.check(value)) {
+        throw new Error("Can't use bad words")
+      }
+      return true
+    }),
 
   check("userName")
     .notEmpty().withMessage("User Name is required")
@@ -15,6 +22,12 @@ const registerValidator = [
       const isExist = await Users.exists({ userName: value });
       if (isExist) throw new Error("This username is already taken");
       return true;
+    })
+    .custom(value => {
+      if (leoProfanity.check(value)) {
+        throw new Error("Can't use bad words")
+      }
+      return true
     }),
 
   check("password")

@@ -3,6 +3,7 @@ const path = require("path");
 const User = require("../models/users");
 const WeeklyPost = require("../models/weeklyPost");
 const { compare } = require("bcrypt");
+const leoProfanity = require('leo-profanity');
 
 const createPost = async (req, res) => {
     try {
@@ -10,6 +11,10 @@ const createPost = async (req, res) => {
             return res.status(400).json({ message: "No file uploaded" });
         }
         const { title, description } = req.body;
+        
+        const cleanTitle = leoProfanity.clean(title); 
+        const cleanDescription= leoProfanity.clean(description)
+
         // const imagePath = "../../Images/imgPosts/" + req.file.filename;
         const imagePath = "/Images/imgPosts/" + req.file.filename;
 
@@ -18,8 +23,8 @@ const createPost = async (req, res) => {
             return res.status(404).json({ message: "Your session has been expired please login again" });
         }
         const newPost = await Posts.create({
-            title,
-            description,
+            title: cleanTitle,
+            description: cleanDescription,
             image: imagePath,
             userID: req.session.userId,
             userName: userName.userName,
@@ -53,6 +58,8 @@ const handleEditPost = async (req, res) => {
         if (!title || !description) {
             return res.status(400).json({ message: "Please fill in all fields" });
         }
+        const cleanTitle = leoProfanity.clean(title); 
+        const cleanDescription= leoProfanity.clean(description)
         const post = await Posts.findById(postId);
         if (!post) {
             return res.status(403).json({ message: "Post not found" });
@@ -62,8 +69,8 @@ const handleEditPost = async (req, res) => {
             return res.status(401).json({ message: "Your session has been expired please login again" });
         }
 
-        post.title = title;
-        post.description = description;
+        post.title = cleanTitle;
+        post.description = cleanDescription;
         await post.save();
         res.status(200).json({ message: "Post updated successfully", post });
     } catch (err) {
